@@ -31,7 +31,7 @@ export async function sendContactEmail(data: EmailData) {
     const result = await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to: contactEmail,
-      replyTo: data.email,
+      reply_to: data.email,
       subject: `New Portfolio Contact: ${escapedSubject}`,
       html: emailHtml,
     });
