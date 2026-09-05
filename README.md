@@ -1,3 +1,5 @@
+<!-- Fresh deployment trigger -->
+
 # Prathamesh Rale Portfolio Website
 
 A professional, modern portfolio website built with Next.js, TypeScript, and React. Features a dark theme, responsive design, contact form, and comprehensive security compliance for 2026.
