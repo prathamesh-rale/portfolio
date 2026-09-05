@@ -1,16 +1,22 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { portfolioData } from '@/data/portfolio';
 import styles from './Hero.module.css';
 
 export default function Hero() {
   const { personal } = portfolioData;
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
     <section id="about" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.textContent}>
+          <div className={`${styles.textContent} ${isLoaded ? styles.loaded : ''}`}>
             <h1>
               <span className={styles.greeting}>Hi, I'm</span>
               <span className={styles.name}>{personal.name}</span>
@@ -30,7 +36,7 @@ export default function Hero() {
               >
                 Get In Touch
               </button>
-              <a
+              
                 href="https://www.linkedin.com/in/prathamesh-rale/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,20 +58,16 @@ export default function Hero() {
           </div>
 
           <div className={styles.visual}>
-            <div className={styles.avatar}>
+            <div className={`${styles.avatar} ${isLoaded ? styles.loaded : ''}`}>
               <div className={styles.avatarContent}>
                 <span>💼</span>
               </div>
             </div>
             <div className={styles.decoration}></div>
-          </div>
-        </div>
-
-        <div className={styles.scroll}>
-          <p>Scroll to explore</p>
-          <div className={styles.arrow}>↓</div>
-        </div>
-      </div>
-    </section>
-  );
-}
+            <div className={styles.particles}>
+              {[...Array(20)].map((_, i) => (
+                <div
+                  key={i}
+                  className={styles.particle}
+                  style={{
+                    '--delay': `${i * 0.1}s`,
