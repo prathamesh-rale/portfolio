@@ -24,12 +24,7 @@
 
 .textContent {
   z-index: 2;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.textContent.loaded {
-  animation: fadeInUp 0.8s ease-out forwards;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .greeting {
@@ -38,7 +33,6 @@
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
-  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .name {
@@ -51,7 +45,6 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
-  animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .title {
@@ -59,7 +52,6 @@
   color: var(--text-secondary);
   font-weight: 600;
   margin-bottom: 1rem;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .bio {
@@ -68,7 +60,6 @@
   color: var(--text-secondary);
   margin-bottom: 2rem;
   max-width: 600px;
-  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .cta {
@@ -76,7 +67,6 @@
   gap: 1rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
-  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .primaryBtn,
@@ -121,14 +111,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  animation: fadeInUp 0.8s ease-out 0.5s both;
 }
 
 .contact p {
   font-size: 1rem;
   color: var(--text-secondary);
   margin: 0;
-  animation: none;
 }
 
 .contact a {
@@ -155,12 +143,7 @@
   position: relative;
   width: 250px;
   height: 250px;
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-.avatar.loaded {
-  animation: scaleIn 0.8s ease-out 0.2s forwards;
+  animation: scaleIn 0.8s ease-out 0.2s both;
 }
 
 .avatarContent {
@@ -194,49 +177,6 @@
   left: -30px;
 }
 
-/* Floating particles */
-.particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--accent-primary);
-  opacity: 0.5;
-  animation: particleFloat 8s ease-in-out infinite;
-  --delay: 0s;
-  --duration: 4s;
-  animation-delay: var(--delay);
-  animation-duration: var(--duration);
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(
-      calc(100px * cos(var(--angle, 0deg))),
-      calc(-200px + var(--offset, 0px))
-    ) scale(0);
-    opacity: 0;
-  }
-}
-
 /* Scroll indicator */
 .scroll {
   text-align: center;
@@ -251,7 +191,6 @@
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  animation: none;
 }
 
 .arrow {
